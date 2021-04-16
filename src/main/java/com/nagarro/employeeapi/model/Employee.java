@@ -1,12 +1,32 @@
+/*
+* Class name: Employee
+*
+* Version info: jdk 1.8
+*
+* Copyright notice:
+* 
+* Author info: Arpit Garg
+*
+* Creation date: 13/Apr/2021
+*
+* Last updated By: Arpit Garg
+*
+* Last updated Date: 16/Apr/2021
+*
+* Description: Model class for Employee 
+*/
 package com.nagarro.employeeapi.model;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import javax.persistence.*;
-import java.lang.reflect.GenericSignatureFormatError;
-
 @Entity(name = "Employees")
-@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
+@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -21,7 +41,7 @@ public class Employee {
     @Column(name = "Date_of_Birth")
     private String dateOfBirth;
 
-    Employee(){
+    Employee() {
 
     }
 
@@ -64,5 +84,4 @@ public class Employee {
     public void setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
-
 }
